@@ -1,0 +1,139 @@
+{%extends 'base.html'%}
+
+
+{%block head%}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Poppins:ital,wght@1,200&display=swap" rel="stylesheet">
+<script src="{{ url_for('static', filename = 'js/main.js') }}"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Akaya+Kanadaka&display=swap" rel="stylesheet">
+{%endblock%}
+
+
+{%block body%}
+<section id="background">
+	<div class="title_text3">
+		<span id="deep1"></span>
+		<p>DEEPFRUITS</p>
+		<span id="deep"></span>
+	</div>
+<div class="fruittext">
+<h1>Detection Fruits</h1>
+<MARQUEE>Identification du type et d'état des fruits avec les technologies d'apprentissage profond</MARQUEE>
+<div class="fruit_btn">
+	<a href="#demo"><span></span>Essayez la démo</a>
+	
+</div>
+</div>
+</section>
+
+<div id="sideNav">
+    <nav>
+    	<ul>
+		    <li><a href="#">Acceuil</a></li>
+		    <li><a href="#about">A propos</a></li>
+		    <li><a href="#demo">Demonstration</a></li>
+		    <li><a href="#contact">Contact</a></li>
+	    </ul>
+    </nav>
+</div>
+<div id="manuBtn">
+	<i class="fa" id="menu">&#xf0c9;</i>
+</div>
+
+<!---acceuil     les technologies de pointe de reconnaissance d'images alimentaires pour faire progresser l'intelligence artificiel dans l'alimentation et la santé . La technologie de reconnaissance d'images alimentaires est alimentée par des techniques d'apprentissage en profondeur de pointe-->
+<section id="feature">
+	<div class="title_text">
+		<p id="about">A PROPOS</p>
+		<h3 class="textapropos">DeepFruits offre la possibilité d'identifier le type et l'état des fruits, en s'appuyant sur les réseaux de neurones convolutifs.<br>DeepFruits est développé par OUAKIB Amine et RAMADI Hamza dirigés par Mme ZAHIR Jihad à la faculté des sciences semlalia Marrakech, Département d'informatique</h3>
+	</div>
+</section>
+<section id="feature1">
+<div class="title_text1">
+<p id="demo">Demonstration</p>
+<div class="features_box">
+	<div class="features">
+		<form action="/upload-target" method="post" enctype="multipart/form-data" class="feature_desc">
+			<input type="file" name="file" id="file" style="display:none;">
+			<input id='select' type="button" value="Selectionner">
+			<input type="submit" value="Analyser">
+		</form>
+	</div>
+	<div class="images"></div>
+	<div class="show"></div>
+</div>
+</div>
+</section>
+<section id="feature2">
+	<div class="title_text2">
+		<p id="contact">CONTACT</p>
+	</div>
+	<div class="content">
+	<table class="container" >
+		<tr class="contactInfo" width="100%" style="padding: 0px;">
+			<td class="box" width="33.33%">
+				<div class="icon"><i class="fas fa-envelope-open-text"></i></div>
+				<div class="text">
+					<h4>Gmail</h4>
+					<h5>ouakibamine3@gmail.com ramadihamza99@gmail.com</h5>
+				</div>
+			</td>
+			<td class="box" width="33.33%">
+				<div class="icon"><i class="fas fa-phone"></i></div>
+				<div class="text">
+					<h4>Phone</h4>
+					<h5>06-94-48-95-38<br>06-39-32-63-66</h5>
+				</div>
+			</td>
+			<td class="box" width="33.33%">
+				<div class="icon"><i class="fas fa-map-marker-alt"></i></div>
+				<div class="text">
+					<h4>Adresse</h4>
+					<h5>Faculté de science samlalia Département d'inforamtique</h5>
+				</div>
+			</td>
+		</tr>
+	</table>
+</div>
+			
+</section>
+
+
+<script>
+	var menuBtn = document.getElementById("manuBtn");
+	var sideNav = document.getElementById("sideNav");
+	var menu = document.getElementById("menu");
+
+	var bars = "&#xf0c9;";
+	var close = "&#xf00d;";
+
+	menuBtn.onclick = function(){
+		if(sideNav.style.right == "-250px"){
+			sideNav.style.right = "0" ;
+			menu.innerHTML = close;
+		}
+		else{
+			sideNav.style.right = "-250px" ;
+			menu.innerHTML= bars;
+		}
+	}
+
+</script>
+<script>
+	document.querySelector('#select').addEventListener('click', () => {
+	  document.querySelector('input[type="file"]').click();
+	});
+</script>
+
+{%endblock%}

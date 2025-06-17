@@ -1,0 +1,1 @@
+{ "prediction":"Rotten Lemon" , "precision" : "99.05824661254883"}{ "prediction":"Rotten Orange" , "precision" : "0.49774469807744026"}{ "prediction":"Fresh Lemon" , "precision" : "0.43467343784868717"}{ "prediction":"Rotten Mango" , "precision" : "0.009274244075641036"}{ "prediction":"Rotten Apricot" , "precision" : "3.8668468960167957e-05"}
